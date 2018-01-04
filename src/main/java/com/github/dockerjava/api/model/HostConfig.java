@@ -26,6 +26,12 @@ public class HostConfig implements Serializable {
 
     private static final List<String> PREDEFINED_NETWORKS = Arrays.asList("bridge", "host", "none");
 
+    /**
+     * @since {@link com.github.dockerjava.core.RemoteApiVersion#VERSION_1_25}
+     */
+    @JsonProperty("AutoRemove")
+    private Boolean autoRemove;
+
     @JsonProperty("Binds")
     private Binds binds;
 
@@ -449,6 +455,14 @@ public class HostConfig implements Serializable {
     }
 
     // auto-generated builder setters
+    /**
+     * @see #autoRemove
+     */
+    public HostConfig withAutoRemove(Boolean autoRemove) {
+        this.autoRemove = autoRemove;
+        return this;
+    }
+
     /**
      * @see #binds
      */

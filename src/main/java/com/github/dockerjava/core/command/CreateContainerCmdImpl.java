@@ -517,6 +517,13 @@ public class CreateContainerCmdImpl extends AbstrDockerCmd<CreateContainerCmd, C
     }
 
     @Override
+    public CreateContainerCmd withAutoRemove(Boolean autoRemove) {
+        checkNotNull(autoRemove, "autoRemove was not specified");
+        hostConfig.withAutoRemove(autoRemove);
+        return this;
+    }
+
+    @Override
     public CreateContainerCmd withBinds(Bind... binds) {
         checkNotNull(binds, "binds was not specified");
         hostConfig.setBinds(binds);

@@ -215,6 +215,11 @@ public interface CreateContainerCmd extends SyncDockerCmd<CreateContainerRespons
 
     CreateContainerCmd withAttachStdout(Boolean attachStdout);
 
+    /**
+     * @since 1.25
+     */
+    CreateContainerCmd withAutoRemove(Boolean autoRemove);
+
     CreateContainerCmd withBinds(Bind... binds);
 
     CreateContainerCmd withBinds(List<Bind> binds);
