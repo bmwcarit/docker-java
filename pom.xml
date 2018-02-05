@@ -285,11 +285,6 @@
 
 	<pluginRepositories>
 		<pluginRepository>
-			<id>eclipse.virgo.build.bundles.release</id>
-			<name>Eclipse Virgo Build</name>
-			<url>http://build.eclipse.org/rt/virgo/maven/bundles/release</url>
-		</pluginRepository>
-		<pluginRepository>
 			<id>com.springsource.repository.bundles.external</id>
 			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
 			<url>http://repository.springsource.com/maven/bundles/external</url>
@@ -467,6 +462,18 @@
 				<groupId>org.eclipse.virgo.bundlor</groupId>
 				<artifactId>org.eclipse.virgo.bundlor.maven</artifactId>
 				<version>${maven-bundlor-plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.virgo.bundlor</groupId>
+						<artifactId>org.eclipse.virgo.bundlor</artifactId>
+						<version>1.1.2.RELEASE</version>
+					</dependency>
+					<dependency>
+						<groupId>org.eclipse.virgo.bundlor</groupId>
+						<artifactId>org.eclipse.virgo.bundlor.blint</artifactId>
+						<version>1.1.2.RELEASE</version>
+					</dependency>
+				</dependencies>
 				<executions>
 					<execution>
 						<id>bundlor</id>
@@ -479,7 +486,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
